@@ -1,43 +1,76 @@
-.form{
+.form {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
 }
 
-.form-element{
+.form-title{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 1%;
+    margin-top: 0;
+    padding-top: 0;
+}
+.form-element {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0;
-    font-weight: 400;
+    padding: 1%;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     cursor: pointer;
     background-image: none;
-    border: 1px solid transparent;
     white-space: nowrap;
-    font-size: 14px;
+    color: white;
 }
 
-.input-box{
-    background-color: transparent;
-    border: 1px solid #FFFFFF; 
+.star{
+    color: #b6401f;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.error-text {
+    padding-top: 1%;
+    font-size: small;
 }
 
 
-.submit-button{
+.input-box {
+    /* width: 90%; */
+    padding: 10px 14px;
+    margin-top: 1px;
+    border: 0px solid #479daf;
+    background-color: white;
+    color: #252628;
+}
+
+
+input[type="submit"] {
+    width: 100%;
     display: inline-block;
-    margin-top: 5%;
+    margin-top: 7%;
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
     vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
     cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
+    border: 1px solid white;
     white-space: nowrap;
-    padding: 6px 12px;
+    padding: 10px 14px;
     font-size: 14px;
+    background-color: transparent;
+    color: white;
+}
+
+input[type="submit"]:disabled {
+    background-color: #a0bfc3;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+input[type="submit"]:not(:disabled):hover {
+    background-color: #203d43;
+    color: #479DAFE5;
+    border-color: #479DAFE5;
 }

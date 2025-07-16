@@ -60,7 +60,10 @@ function Form() {
 
     return (
         <form onSubmit={handleSubmit} class="form">
-            <label class="form-element">First name:
+            <div class="form-element">
+                <label>
+                    First name<span class="star">*</span>
+                </label>
                 <input
                     class="input-box"
                     type="text"
@@ -68,8 +71,10 @@ function Form() {
                     value={inputs.firstName || ""}
                     onChange={handleChange}
                 />
-            </label>
-            <label class="form-element">Last Name:
+            </div>
+
+            <div class="form-element">
+                <label >Last Name<span class="star">*</span></label>
                 <input
                     class="input-box"
                     type="text"
@@ -77,20 +82,25 @@ function Form() {
                     value={inputs.lastName || ""}
                     onChange={handleChange}
                 />
-            </label>
-            <label class="form-element">Phone Number:
+            </div>
+
+            <div class="form-element">
+                <label>Phone Number<span class="star">*</span></label>
                 <input
                     class="input-box"
-                    type="text"
+                    type="number"
                     name="phone"
                     value={inputs.phone || ""}
                     onChange={handleChange}
                 />
-            </label>
-            {inputs.phone && !isValidPhone(inputs.phone) && (
-                <span className="error-text">Enter a valid U.S. phone number.</span>
-            )}
-            <label class="form-element">Email:
+                {inputs.phone && !isValidPhone(inputs.phone) && (
+                    <span className="error-text">Enter a valid U.S. phone number.</span>
+                )}
+
+            </div>
+
+            <div class="form-element">
+                <label>Email<span class="star">*</span></label>
                 <input
                     class="input-box"
                     type="text"
@@ -98,11 +108,14 @@ function Form() {
                     value={inputs.email || ""}
                     onChange={handleChange}
                 />
-            </label>
-            {inputs.email && !isValidEmail(inputs.email) && (
-                <span className="error-text">Please enter a valid email address.</span>
-            )}
-            <label class="form-element">Price:
+                {inputs.email && !isValidEmail(inputs.email) && (
+                    <span className="error-text">Please enter a valid email address.</span>
+                )}
+
+            </div>
+
+            <div class="form-element">
+                <label>Guess the price<span class="star">*</span></label>
                 <input
                     class="input-box"
                     type="number"
@@ -110,8 +123,11 @@ function Form() {
                     value={inputs.price || ""}
                     onChange={handleChange}
                 />
-            </label>
-            <label class="form-element">Pin:
+
+            </div>
+
+            <div class="form-element">
+                <label>Pin<span class="star">*</span></label>
                 <input
                     class="input-box"
                     type="text"
@@ -119,10 +135,12 @@ function Form() {
                     value={inputs.pin || ""}
                     onChange={handleChange}
                 />
-            </label>
-            {inputs.pin && !isValidPin(inputs.pin) && (
-                <span className="error-text">Enter a valid 16-digit PIN like 1234-5678-9012-3456.</span>
-            )}
+                {inputs.pin && !isValidPin(inputs.pin) && (
+                    <span className="error-text">Enter a valid 16-digit PIN like 1234-5678-9012-3456.</span>
+                )}
+
+            </div>
+
             <input
                 type="submit"
                 value="Submit"
