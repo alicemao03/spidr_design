@@ -16,7 +16,7 @@ function Form() {
         setInputs((prevInputs) => ({
             ...prevInputs,
             [name]: name === 'pin' ? formatPin(value) : value
-          }));
+        }));
     };
 
     const handleSubmit = (e) => {
@@ -33,7 +33,7 @@ function Form() {
         // Add dashes every 4 digits
         const chunks = trimmed.match(/.{1,4}/g);
         return chunks ? chunks.join('-') : '';
-      };
+    };
 
     const isValidEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -120,15 +120,15 @@ function Form() {
                     onChange={handleChange}
                 />
             </label>
+            {inputs.pin && !isValidPin(inputs.pin) && (
+                <span className="error-text">Enter a valid 16-digit PIN like 1234-5678-9012-3456.</span>
+            )}
             <input
                 type="submit"
                 value="Submit"
                 disabled={!isFormComplete}
                 className={`submit-button ${!isFormComplete ? 'disabled' : ''}`}
             />
-            {inputs.pin && !isValidPin(inputs.pin) && (
-                <span className="error-text">Enter a valid 16-digit PIN like 1234-5678-9012-3456.</span>
-            )}
         </form>
     )
 }
